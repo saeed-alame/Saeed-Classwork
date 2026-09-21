@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="mainTitle">My Student Page </h1>
+
+    <p id="message">I am learning javaScript</p>
+
+    <p id="pageStatus">Waiting for the page to load</p>
+
+    <button id="helloButton">Say Hello</button>
+
+ <button id="namebutton">Enter My Name</button>
+
+  <button id="messageButton">Change My Message</button>
+  
+  <div id="HoverBox" style="background-color: lightgray; padding: 25px; width: 250px;" >
+    Move Your Mouse Here
+  </div>
+
+
+
+
+
+  <script>
+    document.getElementById("helloButton").onclick = function() {
+        alert("Welcome to my Page!");
+    };
+
+    document.getElementById("namebutton").onclick = function() {
+        let name = prompt("What is your name?");
+        document.getElementById("mainTitle").textContent = "Welcome, " + name + "!";
+    };
+
+    document.getElementById("messageButton").onclick = function() {
+        document.getElementById("message").textContent = "I can make my webpage interactive!";
+    };
+    let x=document.getElementById("HoverBox");
+
+    x.onmouseover = function() {
+        x.style.backgroundColor = "orange";
+        x.textContent = "You Found me!";
+    };
+
+ x.onmouseout = function() {
+        x.style.backgroundColor = "LightGrey";
+        x.textContent = "Move your mouse here";
+    };
+
+    window.onload = function() {
+        document.getElementById("pageStatus").textContent = "The page is ready!"
+    };
+    
+    let y=document.getElementById("mainTitle")
+    y.ondblclick = function() {
+        y.textContent = "My Student Page";
+    }
+
+  </script>
+</body>
+</html>
